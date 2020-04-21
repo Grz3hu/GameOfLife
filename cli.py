@@ -15,13 +15,28 @@ def printBoardNum(board,size):
     for i in range(size):
         print(i,end=" ")
 
-size=int(input("Please enter size of the board (you only have to type on number since its square): "))
+
+size=0
+while True:
+    try:
+        size=int(input("Please enter size of the board (you only have to type on number since its square): "))
+        break
+    except ValueError:
+        print("Thats not a number. Try again.")
 board = [[' ' for x in range(size)] for y in range(size)]
 
 while True:
     system("clear")
     printBoardNum(board,size)
-    a=ast.literal_eval(input("Please enter in what row and column you would like to place a living cell (examplle input \"1,2\"), if you are done type \"-1\":  "))
+    while True:
+        try:
+            a=ast.literal_eval(input("Please enter in what row and column you would like to place a living cell (examplle input \"1,2\"), if you are done type \"-1\":  "))
+            break
+        except ValueError:
+            print("Thats not a number. Try again.")
+        except SyntaxError:
+            print("Wrong syntax. Try again")
+
     if a==-1: break
 
     if board[a[0]][a[1]]=='x':
