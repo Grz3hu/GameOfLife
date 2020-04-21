@@ -23,7 +23,9 @@ while True:
         break
     except ValueError:
         print("Thats not a number. Try again.")
+
 board = [[' ' for x in range(size)] for y in range(size)]
+
 
 while True:
     system("clear")
@@ -31,9 +33,11 @@ while True:
     while True:
         try:
             a=ast.literal_eval(input("Please enter in what row and column you would like to place a living cell (examplle input \"1,2\"), if you are done type \"-1\":  "))
+            if a[0]>=size or a[1]>=size:
+                raise ValueError()
             break
         except ValueError:
-            print("Thats not a number. Try again.")
+            print("Wrong value. Try again.".format(ValueError.args))
         except SyntaxError:
             print("Wrong syntax. Try again")
 
@@ -43,7 +47,8 @@ while True:
         board[a[0]][a[1]]=' '
     else:
         board[a[0]][a[1]]='x'
-    
+   
+
 while True:
     system("clear")
     tests.printBoard(board,size)
