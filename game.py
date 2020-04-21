@@ -41,4 +41,3 @@ def map(a,size):
     if(a==-1): return size-1
     if(a==size): return 0
     return a
-

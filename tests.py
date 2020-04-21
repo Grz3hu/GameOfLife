@@ -9,5 +9,5 @@ def printNeigh(board,size):
 def printBoard(board,size):
     for i in range(size):
         for j in range(size):
-            print(board[i][j],end=',')
+            print(board[i][j],end='|')
         print()
