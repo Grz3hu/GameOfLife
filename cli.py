@@ -32,8 +32,8 @@ while True:
     printBoardNum(board,size)
     while True:
         try:
-            a=ast.literal_eval(input("Please enter in what row and column you would like to place a living cell (examplle input \"1,2\"), if you are done type \"-1\":  "))
-            if a[0]>=size or a[1]>=size:
+            a=ast.literal_eval(input("Please enter in what row and column you would like to place a living cell (example input: \"1,2\"), if you are done type \"-1\":  "))
+            if a!=-1 and (int(a[0])>=size or int(a[1])>=size):
                 raise ValueError()
             break
         except ValueError:
